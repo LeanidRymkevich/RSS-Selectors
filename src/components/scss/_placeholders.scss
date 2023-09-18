@@ -1,0 +1,24 @@
+%main-font {
+  font-size: 2rem;
+  color: $main-text-color;
+  line-height: 1.0;
+}
+
+%level-active-backgr-color {
+  background-color: lighten($color: $levels-backgr-color, $amount: 10);
+}
+
+%editors-header-text {
+  font-size: $editor-title-font-size;
+  line-height: 1;
+}
+
+%editor-line-text {
+  font-size: $editor-title-font-size;
+  line-height: 1;
+  color: $editor-workspace-text-color;
+}
+
+%editor-frames {
+  border: 1px solid $level-text-color;
+}

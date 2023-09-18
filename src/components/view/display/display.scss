@@ -1,0 +1,102 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+@import "./customElements.scss";
+
+.display {
+  grid-area: display;
+}
+
+.display__container {
+  padding: 5px 10px 15px 10px;
+  
+}
+
+.table {
+  position: relative;
+  max-width: 570px;
+  min-width: 370px;
+  margin: 0 auto;
+  @include flex($direction: column, $justify: flex-start);
+}
+
+.table__bar {
+  width: 100%;
+  height: 140px;
+  background-color: $table-bar-color;
+  transform: rotateX(20deg);
+  transform-origin: bottom;
+  @include flex();
+  padding: 5px;
+
+  & > * {
+    display: block;
+    margin: 5px;
+    width: 100%;
+    max-width: 130px;
+    min-width: 80px;
+    aspect-ratio: 1;
+    @include flex();
+    transition: transform .2s ease-in;
+    transform: scale(1);
+
+    > * {
+      width: 60%;
+      height: 60%;
+      @include flex();
+
+      > * {
+        width: 40%;
+        height: 40%;
+        @include flex();
+      }
+    }
+  }
+
+  &_win{
+    > * {
+      transform: scale(0);
+    }
+  }
+}
+
+.table__edge {
+  width: 100%;
+  height: 15px;
+  background-color: $table-edge-color;
+  transform: rotateX(-40deg);
+  transform-origin: top;
+}
+
+
+.table__left-leg,
+.table__right-leg{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: $table-leg-color;
+  transform: rotateX(-40deg);
+  transform-origin: top;
+}
+
+.table__left-leg{
+  left: 15px;
+  bottom: -12px;
+}
+
+.table__right-leg {
+  right: 15px;
+  bottom: -12px;
+}
+
+.fun {
+  animation: jump 1s infinite ease-in-out;
+  transform-origin: bottom;
+}
+
+@keyframes jump{
+  0% {transform: skewX(0deg);}
+  25% {transform: skewX(-8deg);}
+  50% {transform: skewX(0deg);}
+  75% {transform: skewX(8deg);}
+  100% {transform: skewX(0deg);}
+}

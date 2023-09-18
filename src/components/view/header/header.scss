@@ -1,0 +1,25 @@
+@import "../../scss/variables";
+@import "../../scss/placeholders";
+@import "../../scss/mixins";
+
+.header {
+  grid-area: header;
+}
+
+.title {
+  @include flex($justify: flex-start);
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.title__img {
+  width: $title-font-size;
+  height: $title-font-size;
+  background: url("../../../assets/favicon.ico");
+  background-size: contain;
+}
+
+.title__text {
+  @extend %main-font;
+  font-weight: 600;
+}

@@ -1,0 +1,20 @@
+@import "../../../scss/variables";
+@import "../../../scss/placeholders";
+@import "../../../scss/mixins";
+
+.numbered-line {
+  grid-area: line;
+  @include flex($direction: column, $justify: flex-start);
+  @extend %editor-line-text;
+  @extend %editor-frames;
+  border-right: none;
+  padding: 5px 0;
+
+  & > span {
+    padding-top: 5px;
+
+    &:last-child {
+      padding-bottom: 5px;
+    }
+  }
+}

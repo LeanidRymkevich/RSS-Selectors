@@ -1,0 +1,27 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.editors {
+  grid-area: editors;
+}
+
+.editors__container {
+  display: flex;
+  border: 10px solid $levels-backgr-color;
+  border-radius: 10px;
+
+  @include media-max-width(800px) {
+    flex-direction: column;
+  }
+
+  &_shaking {
+    animation: shake 0.2s cubic-bezier(0.4, 0, 1, 1) 6;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  33.333% { transform: translateX(10px); }
+  66.666% { transform: translateX(-10px); }
+  100% { transform: translateX(10px); }
+}

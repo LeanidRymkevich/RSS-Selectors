@@ -1,0 +1,55 @@
+@import "../../scss/variables";
+@import "../../scss/placeholders";
+@import "../../scss/mixins";
+
+.footer {
+  grid-area: footer;
+  padding: 10px 0;
+}
+
+.footer__container {
+  @include flex($justify: space-between, $align: flex-end);
+  gap: 30px;
+  @extend %main-font;
+}
+
+.github {
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  white-space: nowrap;
+
+  &:hover .github__user {
+    color: #7a7a7a;
+  }
+}
+
+.github__user {
+  @extend %main-font;
+  transition: color .3s ease-in-out;
+}
+
+.github {
+  @include flex($justify: flex-start);
+  gap: 5px;
+}
+
+.github__logo {
+  display: inline-block;
+  width: 2rem;
+}
+
+.rss-link {
+  display: block;
+  filter: brightness(0.7);
+  transition: filter .3s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
+.rss-link__logo {
+  display: block;
+  height: 30px;
+}

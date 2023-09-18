@@ -1,0 +1,96 @@
+@import "../../scss/variables";
+@import "../../scss/placeholders";
+
+.levels {
+  grid-area: levels;
+  background-color: $levels-backgr-color;
+}
+
+.levels__container {
+  margin: calc($title-font-size + 20px) 10px 20px;
+}
+
+.levels__title {
+  @extend %main-font;
+  text-align: center;
+}
+
+.levels-list {
+  margin: 10px 0  ;
+}
+
+.levels-list__item {
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.item {
+  padding: 5px;
+  border-radius: 5px;
+  list-style: none;
+  text-align: center;
+  font-size: $level-text-font-size;
+  color: $level-text-color;
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    @extend %level-active-backgr-color;
+  }
+
+  &_active {
+    @extend %level-active-backgr-color;
+    .item__text{
+      color: $main-text-color;
+    }
+  }
+
+  &_passed {
+    .item__marker {
+      color: $level-marker-passed-color;
+    }
+  }
+
+  &::before{
+    content: '!';
+    color: red;
+    display: none;
+  }
+
+  &_hinted::before {
+    display: inline-block;
+  }
+}
+
+.item__text,
+.item__marker{
+  transition: color .3s ease-in-out;
+}
+
+.reset-btn {
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+  color: $main-text-color;
+  border-color: $main-text-color;
+
+  &:hover {
+    cursor: pointer;
+    color: $levels-backgr-color;
+    background-color: $main-text-color;
+    border-color: $main-text-color;
+  }
+
+  &:active {
+    border-color: $levels-backgr-color;
+  }
+}
+
+.btn {
+  outline: none;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all .3s ease-in-out;
+}

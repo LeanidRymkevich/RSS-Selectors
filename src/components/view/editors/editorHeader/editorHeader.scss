@@ -1,0 +1,36 @@
+@import "../../../scss/variables";
+@import "../../../scss/placeholders";
+@import "../../../scss/mixins";
+
+.editor {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "line workspace";
+
+  @include media-max-width(800px) {
+    width: 100%;
+  }
+}
+
+.editor__header{
+  grid-area: header;
+  background-color: $editor-header-backgr-color;
+  padding: 5px 15px;
+  @include flex($justify: space-between);
+  @extend %editor-frames;
+  border-bottom: none;
+}
+
+.editor__title{
+  @extend %editors-header-text;
+  color: $main-text-color;
+}
+
+.editor__file-name {
+  @extend %editors-header-text;
+  color: $level-text-color;
+}

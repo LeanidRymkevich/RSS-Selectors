@@ -1,0 +1,39 @@
+@import "../../../scss/variables";
+@import "../../../scss/placeholders";
+@import "../../../scss/mixins";
+
+.html-editor__header {
+  border-left: none;
+}
+
+.html-editor__line{
+  background-color: $html-editor-line-backgr-color;
+}
+
+.html-editor__workspace {
+  grid-area: workspace;
+  @extend %editor-frames;
+  padding: 5px;
+}
+
+.html-editor__workspace {
+  background-color: $html-editor-workspace-backgr-color;
+}
+
+.html-editor__text {
+  @extend %editor-line-text;
+  margin-top: 5px;
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  
+  & div {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+
+  div:first-child{
+    margin-top: 5px;
+  }
+}

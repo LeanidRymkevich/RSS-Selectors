@@ -1,0 +1,79 @@
+@import "../../../scss/variables";
+@import "../../../scss/placeholders";
+@import "../../../scss/mixins";
+
+.css-editor__header {
+  border-right: none;
+}
+
+.css-editor__line{
+  background-color: $css-editor-line-backgr-color;
+}
+
+.css-editor__workspace{
+  grid-area: workspace;
+  @extend %editor-frames;
+  padding: 5px;
+}
+
+.css-editor__workspace {
+  background-color: $css-editor-workspace-backgr-color;
+}
+
+.css-editor__selector-input {
+  @include flex($justify: space-between);
+  gap: 10px;
+}
+
+.css-editor__input {
+  font-family: monospace;
+  flex-grow: 1;
+  padding: 2px 5px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  @extend %editor-line-text;
+  color: $css-input-text-color;
+
+  &:focus {
+    animation: none;
+  }
+
+  &_empty {
+    animation: input-animation .8s infinite ease-in-out;
+  }
+}
+
+@keyframes input-animation {
+  from { background-color: transparent; }
+  to { background-color: $css-input-anim-color; }
+} 
+
+.css-editor__btn {
+  @extend %editor-line-text;
+  padding: 3px;
+
+  &:hover {
+    cursor: pointer;
+    color: $css-editor-workspace-backgr-color;
+    background-color: $editor-workspace-text-color;
+    border-color: $editor-workspace-text-color;
+  }
+
+  &:active {
+    border-color: $css-editor-workspace-backgr-color;
+  }
+}
+
+
+.css-editor__text {
+  @extend %editor-line-text;
+  
+  & div {
+    margin-bottom: 5px;
+  }
+
+  & div:nth-child(2) {
+    padding-left: 10px;
+  }
+}

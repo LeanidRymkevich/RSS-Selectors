@@ -1,0 +1,34 @@
+@import "../../scss/variables";
+
+.task-description {
+  grid-area: task-description;
+  padding: 10px;
+}
+
+.description {
+  font-size: $description-font-size;
+  color: $main-text-color;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.help-btn {
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+  color: $main-text-color;
+  border-color: $main-text-color;
+
+  &:hover {
+    cursor: pointer;
+    color: $levels-backgr-color;
+    background-color: $main-text-color;
+    border-color: $main-text-color;
+  }
+
+  &:active {
+    border-color: $levels-backgr-color;
+  }
+}
